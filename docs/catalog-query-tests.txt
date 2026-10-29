@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /home/lenovo/projects/bazar/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/lenovo/projects/bazar
+collecting ... collected 8 items
+
+tests/catalog/test_queries.py::test_health PASSED                        [ 12%]
+tests/catalog/test_queries.py::test_search_distributed_systems PASSED    [ 25%]
+tests/catalog/test_queries.py::test_search_undergraduate_school PASSED   [ 37%]
+tests/catalog/test_queries.py::test_search_unknown_topic PASSED          [ 50%]
+tests/catalog/test_queries.py::test_search_normalizes_topic PASSED       [ 62%]
+tests/catalog/test_queries.py::test_book_info PASSED                     [ 75%]
+tests/catalog/test_queries.py::test_missing_book PASSED                  [ 87%]
+tests/catalog/test_queries.py::test_invalid_book_id PASSED               [100%]
+
+============================== 8 passed in 0.29s ===============================
