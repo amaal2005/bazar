@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /home/lenovo/projects/bazar/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/lenovo/projects/bazar
+collecting ... collected 13 items
+
+tests/catalog/test_updates.py::test_restock_and_price_update PASSED      [  7%]
+tests/catalog/test_updates.py::test_failed_update_changes_nothing PASSED [ 15%]
+tests/catalog/test_updates.py::test_invalid_input[data0] PASSED          [ 23%]
+tests/catalog/test_updates.py::test_invalid_input[data1] PASSED          [ 30%]
+tests/catalog/test_updates.py::test_invalid_input[data2] PASSED          [ 38%]
+tests/catalog/test_updates.py::test_invalid_input[data3] PASSED          [ 46%]
+tests/catalog/test_updates.py::test_invalid_input[data4] PASSED          [ 53%]
+tests/catalog/test_updates.py::test_invalid_input[data5] PASSED          [ 61%]
+tests/catalog/test_updates.py::test_invalid_input[data6] PASSED          [ 69%]
+tests/catalog/test_updates.py::test_invalid_input[data7] PASSED          [ 76%]
+tests/catalog/test_updates.py::test_missing_book PASSED                  [ 84%]
+tests/catalog/test_updates.py::test_wrong_content_type PASSED            [ 92%]
+tests/catalog/test_updates.py::test_concurrent_last_copy PASSED          [100%]
+
+============================== 13 passed in 0.64s ==============================
