@@ -1,0 +1,59 @@
+Bazar.com — Catalog HTTP Output
+Captured at: 2026-10-29T19:33:45.884262+00:00
+Scope: Direct Catalog requests; full purchase flow is pending.
+
+GET /health
+HTTP 200
+{
+  "service": "catalog",
+  "status": "ok"
+}
+
+GET /search/distributed%20systems
+HTTP 200
+[
+  {
+    "id": 1,
+    "title": "How to get a good grade in DOS in 40 minutes a day."
+  },
+  {
+    "id": 2,
+    "title": "RPCs for Noobs."
+  }
+]
+
+GET /search/undergraduate%20school
+HTTP 200
+[
+  {
+    "id": 3,
+    "title": "Xen and the Art of Surviving Undergraduate School."
+  },
+  {
+    "id": 4,
+    "title": "Cooking for the Impatient Undergrad."
+  }
+]
+
+GET /info/2
+HTTP 200
+{
+  "id": 2,
+  "price": 47.0,
+  "quantity": 12,
+  "title": "RPCs for Noobs.",
+  "topic": "distributed systems"
+}
+
+GET /info/999
+HTTP 404
+{
+  "error": {
+    "code": "BOOK_NOT_FOUND",
+    "message": "Book does not exist."
+  }
+}
+
+GET /search/unknown
+HTTP 200
+[]
