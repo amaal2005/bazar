@@ -6,9 +6,11 @@ from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
 
 from database import get_connection, init_db
+from update_routes import register_update_routes
 
 app = Flask(__name__)
 init_db()
+register_update_routes(app)
 
 
 def error_response(code, message, status):
