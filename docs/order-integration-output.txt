@@ -1,0 +1,15 @@
+Bazar.com - Catalog and Order integration snapshot
+Thu Nov  5 19:07:26 UTC 2026
+
+NAME              IMAGE           COMMAND           SERVICE   CREATED          STATUS         PORTS
+bazar-catalog-1   bazar-catalog   "python app.py"   catalog   22 minutes ago   Up 4 minutes   0.0.0.0:5001->5001/tcp, [::]:5001->5001/tcp
+bazar-order-1     bazar-order     "python app.py"   order     6 minutes ago    Up 6 minutes   0.0.0.0:5002->5002/tcp, [::]:5002->5002/tcp
+
+Catalog book 2:
+{"id":2,"price":47.0,"quantity":10,"title":"RPCs for Noobs.","topic":"distributed systems"}
+
+
+Persisted orders:
+Total orders: 2
+{'order_id': 1, 'item_id': 2, 'title': 'RPCs for Noobs.', 'quantity': 1, 'price_cents': 4700, 'created_at': '2026-11-05T18:48:10Z'}
+{'order_id': 2, 'item_id': 2, 'title': 'RPCs for Noobs.', 'quantity': 1, 'price_cents': 4700, 'created_at': '2026-11-05T18:53:55Z'}
