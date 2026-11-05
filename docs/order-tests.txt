@@ -1,0 +1,14 @@
+test_book_not_found (test_order.OrderServiceTests.test_book_not_found) ... ok
+test_catalog_timeout (test_order.OrderServiceTests.test_catalog_timeout) ... ok
+test_catalog_unavailable (test_order.OrderServiceTests.test_catalog_unavailable) ... ok
+test_invalid_catalog_response (test_order.OrderServiceTests.test_invalid_catalog_response) ... ok
+test_invalid_item_id (test_order.OrderServiceTests.test_invalid_item_id) ... ok
+test_out_of_stock (test_order.OrderServiceTests.test_out_of_stock) ... ok
+test_stock_update_conflict (test_order.OrderServiceTests.test_stock_update_conflict) ... ok
+test_successful_purchase (test_order.OrderServiceTests.test_successful_purchase) ... bought book RPCs for Noobs.
+ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.053s
+
+OK

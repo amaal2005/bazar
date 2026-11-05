@@ -8,5 +8,18 @@ services:
     volumes:
       - catalog_data:/data
 
+  order:
+    build: ./order
+    ports:
+      - "5002:5002"
+    environment:
+      ORDER_DB_PATH: /data/orders.db
+      CATALOG_URL: http://catalog:5001
+    volumes:
+      - order_data:/data
+    depends_on:
+      - catalog
+
 volumes:
   catalog_data:
+  order_data:
