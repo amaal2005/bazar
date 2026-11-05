@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /home/lenovo/projects/bazar/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/lenovo/projects/bazar
+collecting ... collected 14 items
+
+tests/frontend/test_gateway.py::test_health PASSED                       [  7%]
+tests/frontend/test_gateway.py::test_search_forwarding PASSED            [ 14%]
+tests/frontend/test_gateway.py::test_info_forwarding PASSED              [ 21%]
+tests/frontend/test_gateway.py::test_purchase_forwarded_once PASSED      [ 28%]
+tests/frontend/test_gateway.py::test_preserves_backend_errors[404-BOOK_NOT_FOUND] PASSED [ 35%]
+tests/frontend/test_gateway.py::test_preserves_backend_errors[409-OUT_OF_STOCK] PASSED [ 42%]
+tests/frontend/test_gateway.py::test_preserves_backend_errors[503-SERVICE_UNAVAILABLE] PASSED [ 50%]
+tests/frontend/test_gateway.py::test_network_failure_without_retry[exception0-504-UPSTREAM_TIMEOUT] PASSED [ 57%]
+tests/frontend/test_gateway.py::test_network_failure_without_retry[exception1-503-SERVICE_UNAVAILABLE] PASSED [ 64%]
+tests/frontend/test_gateway.py::test_invalid_backend_response[backend0] PASSED [ 71%]
+tests/frontend/test_gateway.py::test_invalid_backend_response[backend1] PASSED [ 78%]
+tests/frontend/test_gateway.py::test_invalid_backend_response[backend2] PASSED [ 85%]
+tests/frontend/test_gateway.py::test_unknown_route PASSED                [ 92%]
+tests/frontend/test_gateway.py::test_purchase_requires_post PASSED       [100%]
+
+============================== 14 passed in 0.32s ==============================

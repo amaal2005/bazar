@@ -1,0 +1,20 @@
+GET /search/distributed%20systems -> HTTP 200
+1: How to get a good grade in DOS in 40 minutes a day.
+2: RPCs for Noobs.
+GET /info/2 -> HTTP 200
+Book:     RPCs for Noobs.
+Item ID:  2
+Topic:    distributed systems
+In stock: 9
+Price:    47.00
+POST /purchase/2 -> HTTP 201
+bought book RPCs for Noobs.
+Order ID: 4
+Price:    47.00
+Time:     2026-11-05T19:20:10Z
+GET /info/2 -> HTTP 200
+Book:     RPCs for Noobs.
+Item ID:  2
+Topic:    distributed systems
+In stock: 8
+Price:    47.00

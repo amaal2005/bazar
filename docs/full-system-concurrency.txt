@@ -1,0 +1,7 @@
+Route: Client -> Frontend -> Order -> Catalog
+Response counts: {201: 1, 409: 9}
+Final test stock: 0
+Orders before: 4
+Orders after: 5
+Stock after restoring test setup: 7
+PASS: One purchase and one order; no overselling.

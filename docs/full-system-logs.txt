@@ -1,0 +1,95 @@
+order-1  | 2026-11-05T19:01:23.304764351Z  * Serving Flask app 'app'
+order-1  | 2026-11-05T19:01:23.304837171Z  * Debug mode: off
+order-1  | 2026-11-05T19:01:23.310147004Z [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+order-1  | 2026-11-05T19:01:23.310163808Z  * Running on all addresses (0.0.0.0)
+order-1  | 2026-11-05T19:01:23.310165327Z  * Running on http://127.0.0.1:5002
+order-1  | 2026-11-05T19:01:23.310166467Z  * Running on http://172.18.0.3:5002
+order-1  | 2026-11-05T19:01:23.310167511Z [33mPress CTRL+C to quit[0m
+order-1  | 2026-11-05T19:01:26.724402757Z 172.18.0.1 - - [05/Nov/2026 19:01:26] "GET /health HTTP/1.1" 200 -
+order-1  | 2026-11-05T19:01:56.259450284Z 172.18.0.1 - - [05/Nov/2026 19:01:56] "[35m[1mPOST /purchase/2 HTTP/1.1[0m" 503 -
+order-1  | 2026-11-05T19:16:33.064442707Z bought book RPCs for Noobs.
+order-1  | 2026-11-05T19:16:33.070325923Z 172.18.0.4 - - [05/Nov/2026 19:16:33] "[35m[1mPOST /purchase/2 HTTP/1.1[0m" 201 -
+order-1  | 2026-11-05T19:20:10.610517308Z bought book RPCs for Noobs.
+order-1  | 2026-11-05T19:20:10.615819218Z 172.18.0.4 - - [05/Nov/2026 19:20:10] "[35m[1mPOST /purchase/2 HTTP/1.1[0m" 201 -
+catalog-1  | 2026-11-05T18:45:02.859647764Z  * Serving Flask app 'app'
+catalog-1  | 2026-11-05T18:45:02.859812848Z  * Debug mode: off
+catalog-1  | 2026-11-05T18:45:02.883421674Z [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+catalog-1  | 2026-11-05T18:45:02.883447108Z  * Running on all addresses (0.0.0.0)
+catalog-1  | 2026-11-05T18:45:02.883450372Z  * Running on http://127.0.0.1:5001
+catalog-1  | 2026-11-05T18:45:02.883452771Z  * Running on http://172.18.0.2:5001
+catalog-1  | 2026-11-05T18:45:02.883455075Z [33mPress CTRL+C to quit[0m
+catalog-1  | 2026-11-05T18:47:34.552384297Z 172.18.0.1 - - [05/Nov/2026 18:47:34] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:48:10.875347473Z 172.18.0.3 - - [05/Nov/2026 18:48:10] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:48:10.901916982Z 172.18.0.3 - - [05/Nov/2026 18:48:10] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:49:11.438314088Z 172.18.0.1 - - [05/Nov/2026 18:49:11] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:50:54.161195154Z 172.18.0.3 - - [05/Nov/2026 18:50:54] "[33mGET /info/999 HTTP/1.1[0m" 404 -
+catalog-1  | 2026-11-05T18:52:18.158964665Z 172.18.0.1 - - [05/Nov/2026 18:52:18] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:52:25.654433296Z 172.18.0.3 - - [05/Nov/2026 18:52:25] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:19.207185267Z 172.18.0.1 - - [05/Nov/2026 18:53:19] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:54.435941162Z 172.18.0.1 - - [05/Nov/2026 18:53:54] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.268935418Z 172.18.0.1 - - [05/Nov/2026 18:53:55] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.280750210Z 172.18.0.1 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.547085622Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.549896300Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.553830922Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.554481437Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.557786820Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.558670422Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.560727873Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.569050619Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.574426412Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.576007631Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.593753659Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:55.594984377Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.595842930Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.598158806Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.601368344Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.602625465Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.603294356Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.609761789Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.617419899Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:55.666432829Z 172.18.0.3 - - [05/Nov/2026 18:53:55] "[31m[1mPATCH /update/2 HTTP/1.1[0m" 409 -
+catalog-1  | 2026-11-05T18:53:56.158344897Z 172.18.0.1 - - [05/Nov/2026 18:53:56] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:56.174896284Z 172.18.0.1 - - [05/Nov/2026 18:53:56] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T18:53:56.177956684Z 172.18.0.1 - - [05/Nov/2026 18:53:56] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:02:42.883283110Z  * Serving Flask app 'app'
+catalog-1  | 2026-11-05T19:02:42.884030561Z  * Debug mode: off
+catalog-1  | 2026-11-05T19:02:42.895333271Z [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+catalog-1  | 2026-11-05T19:02:42.895357176Z  * Running on all addresses (0.0.0.0)
+catalog-1  | 2026-11-05T19:02:42.895359177Z  * Running on http://127.0.0.1:5001
+catalog-1  | 2026-11-05T19:02:42.895360129Z  * Running on http://172.18.0.2:5001
+catalog-1  | 2026-11-05T19:02:42.895360986Z [33mPress CTRL+C to quit[0m
+catalog-1  | 2026-11-05T19:02:48.951666578Z 172.18.0.1 - - [05/Nov/2026 19:02:48] "GET /health HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:07:26.861683286Z 172.18.0.1 - - [05/Nov/2026 19:07:26] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:13:52.280257371Z 172.18.0.4 - - [05/Nov/2026 19:13:52] "GET /search/distributed%20systems HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:14:04.159403851Z 172.18.0.4 - - [05/Nov/2026 19:14:04] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:14:18.741897150Z 172.18.0.4 - - [05/Nov/2026 19:14:18] "[33mGET /info/999 HTTP/1.1[0m" 404 -
+catalog-1  | 2026-11-05T19:16:33.007350807Z 172.18.0.3 - - [05/Nov/2026 19:16:33] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:16:33.042586951Z 172.18.0.3 - - [05/Nov/2026 19:16:33] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:17:10.609162906Z 172.18.0.4 - - [05/Nov/2026 19:17:10] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:19:10.589831724Z 172.18.0.4 - - [05/Nov/2026 19:19:10] "GET /search/distributed%20systems HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:19:14.746818368Z 172.18.0.4 - - [05/Nov/2026 19:19:14] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:20:02.242697041Z 172.18.0.4 - - [05/Nov/2026 19:20:02] "GET /search/distributed%20systems HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:20:05.731465563Z 172.18.0.4 - - [05/Nov/2026 19:20:05] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:20:10.564135942Z 172.18.0.3 - - [05/Nov/2026 19:20:10] "GET /info/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:20:10.594606831Z 172.18.0.3 - - [05/Nov/2026 19:20:10] "PATCH /update/2 HTTP/1.1" 200 -
+catalog-1  | 2026-11-05T19:20:19.286691296Z 172.18.0.4 - - [05/Nov/2026 19:20:19] "GET /info/2 HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:12:55.664378234Z  * Serving Flask app 'app'
+frontend-1  | 2026-11-05T19:12:55.664448078Z  * Debug mode: off
+frontend-1  | 2026-11-05T19:12:55.667304845Z [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+frontend-1  | 2026-11-05T19:12:55.667334981Z  * Running on all addresses (0.0.0.0)
+frontend-1  | 2026-11-05T19:12:55.667336308Z  * Running on http://127.0.0.1:5000
+frontend-1  | 2026-11-05T19:12:55.667337066Z  * Running on http://172.18.0.4:5000
+frontend-1  | 2026-11-05T19:12:55.667337919Z [33mPress CTRL+C to quit[0m
+frontend-1  | 2026-11-05T19:13:36.838622883Z 172.18.0.1 - - [05/Nov/2026 19:13:36] "GET /health HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:13:52.283602252Z 172.18.0.1 - - [05/Nov/2026 19:13:52] "GET /search/distributed%20systems HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:14:04.160410357Z 172.18.0.1 - - [05/Nov/2026 19:14:04] "GET /info/2 HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:14:18.743302335Z 172.18.0.1 - - [05/Nov/2026 19:14:18] "[33mGET /info/999 HTTP/1.1[0m" 404 -
+frontend-1  | 2026-11-05T19:16:33.075123934Z 172.18.0.1 - - [05/Nov/2026 19:16:33] "[35m[1mPOST /purchase/2 HTTP/1.1[0m" 201 -
+frontend-1  | 2026-11-05T19:17:10.610611561Z 172.18.0.1 - - [05/Nov/2026 19:17:10] "GET /info/2 HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:19:10.592256609Z 172.18.0.1 - - [05/Nov/2026 19:19:10] "GET /search/distributed%20systems HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:19:14.747674655Z 172.18.0.1 - - [05/Nov/2026 19:19:14] "GET /info/2 HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:20:02.244165409Z 172.18.0.1 - - [05/Nov/2026 19:20:02] "GET /search/distributed%20systems HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:20:05.732291823Z 172.18.0.1 - - [05/Nov/2026 19:20:05] "GET /info/2 HTTP/1.1" 200 -
+frontend-1  | 2026-11-05T19:20:10.617158460Z 172.18.0.1 - - [05/Nov/2026 19:20:10] "[35m[1mPOST /purchase/2 HTTP/1.1[0m" 201 -
+frontend-1  | 2026-11-05T19:20:19.287497709Z 172.18.0.1 - - [05/Nov/2026 19:20:19] "GET /info/2 HTTP/1.1" 200 -
