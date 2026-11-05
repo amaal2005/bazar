@@ -20,6 +20,18 @@ services:
     depends_on:
       - catalog
 
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5000:5000"
+    environment:
+      CATALOG_URL: http://catalog:5001
+      ORDER_URL: http://order:5002
+    depends_on:
+      - catalog
+      - order
+
 volumes:
   catalog_data:
   order_data:
