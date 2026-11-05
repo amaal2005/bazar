@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /home/lenovo/projects/bazar/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/lenovo/projects/bazar
+collecting ... collected 13 items
+
+tests/order/test_order.py::OrderServiceTests::test_book_not_found PASSED [  7%]
+tests/order/test_order.py::OrderServiceTests::test_busy_database_returns_503 PASSED [ 15%]
+tests/order/test_order.py::OrderServiceTests::test_catalog_timeout PASSED [ 23%]
+tests/order/test_order.py::OrderServiceTests::test_catalog_unavailable PASSED [ 30%]
+tests/order/test_order.py::OrderServiceTests::test_internal_database_error_returns_500 PASSED [ 38%]
+tests/order/test_order.py::OrderServiceTests::test_invalid_catalog_response PASSED [ 46%]
+tests/order/test_order.py::OrderServiceTests::test_invalid_item_id PASSED [ 53%]
+tests/order/test_order.py::OrderServiceTests::test_invalid_upstream_error_status_returns_502 PASSED [ 61%]
+tests/order/test_order.py::OrderServiceTests::test_out_of_stock PASSED   [ 69%]
+tests/order/test_order.py::OrderServiceTests::test_stock_update_conflict PASSED [ 76%]
+tests/order/test_order.py::OrderServiceTests::test_success_message_is_printed_after_commit PASSED [ 84%]
+tests/order/test_order.py::OrderServiceTests::test_successful_purchase PASSED [ 92%]
+tests/order/test_order.py::OrderServiceTests::test_updated_price_is_saved PASSED [100%]
+
+============================== 13 passed in 0.31s ==============================

@@ -183,5 +183,99 @@ class OrderServiceTests(unittest.TestCase):
         self.assertEqual(self.order_count(), 0)
 
 
+    def test_updated_price_is_saved(self):
+        self.updated_book["price"] = 47.25
+
+        with patch(
+            "app.requests.request",
+            side_effect=self.mock_catalog()
+        ):
+            response = self.client.post("/purchase/2")
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.json["order"]["price"], 47.25)
+
+        with get_connection() as connection:
+            row = connection.execute(
+                "SELECT price_cents FROM orders"
+            ).fetchone()
+
+        self.assertEqual(row["price_cents"], 4725)
+
+    def test_success_message_is_printed_after_commit(self):
+        def check_committed_order(*args, **kwargs):
+            # A separate connection must see the saved order at print time.
+            self.assertEqual(self.order_count(), 1)
+
+        with patch(
+            "app.requests.request",
+            side_effect=self.mock_catalog()
+        ), patch(
+            "app.print", create=True, side_effect=check_committed_order
+        ) as printed:
+            response = self.client.post("/purchase/2")
+
+        self.assertEqual(response.status_code, 201)
+        printed.assert_called_once_with(
+            "bought book RPCs for Noobs.", flush=True
+        )
+
+    def test_invalid_upstream_error_status_returns_502(self):
+        fake = FakeResponse(418, {
+            "error": {
+                "code": "BOOK_NOT_FOUND",
+                "message": "Unexpected status"
+            }
+        })
+
+        with patch("app.requests.request", return_value=fake):
+            response = self.client.post("/purchase/2")
+
+        self.assertEqual(response.status_code, 502)
+        self.assertEqual(
+            response.json["error"]["code"],
+            "INVALID_UPSTREAM_RESPONSE"
+        )
+        self.assertEqual(self.order_count(), 0)
+
+    def test_internal_database_error_returns_500(self):
+        error = order_app.sqlite3.OperationalError("no such table: orders")
+        error.sqlite_errorcode = order_app.sqlite3.SQLITE_ERROR
+
+        with patch(
+            "app.requests.request",
+            side_effect=self.mock_catalog()
+        ), patch(
+            "app.get_connection", side_effect=error
+        ), patch.object(order_app, "print", create=True) as printed:
+            response = self.client.post("/purchase/2")
+
+        self.assertEqual(response.status_code, 500)
+        self.assertEqual(
+            response.json["error"]["code"], "INTERNAL_ERROR"
+        )
+        self.assertEqual(self.order_count(), 0)
+        printed.assert_not_called()
+
+    def test_busy_database_returns_503(self):
+        error = order_app.sqlite3.OperationalError("database is locked")
+        error.sqlite_errorcode = order_app.sqlite3.SQLITE_BUSY
+
+        with patch(
+            "app.requests.request",
+            side_effect=self.mock_catalog()
+        ), patch(
+            "app.get_connection", side_effect=error
+        ), patch.object(order_app, "print", create=True) as printed:
+            response = self.client.post("/purchase/2")
+
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(
+            response.json["error"]["code"], "SERVICE_UNAVAILABLE"
+        )
+        self.assertEqual(self.order_count(), 0)
+        printed.assert_not_called()
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

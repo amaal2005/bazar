@@ -58,10 +58,22 @@ def upstream_error(response):
     except ValueError:
         return None
 
+    allowed_errors = {
+        400: {"INVALID_REQUEST"},
+        404: {"BOOK_NOT_FOUND"},
+        409: {"OUT_OF_STOCK"},
+        415: {"UNSUPPORTED_MEDIA_TYPE"},
+        500: {"INTERNAL_ERROR"},
+        503: {"SERVICE_UNAVAILABLE"},
+    }
+
     if (
         isinstance(body, dict)
         and isinstance(body.get("error"), dict)
         and isinstance(body["error"].get("code"), str)
+        and body["error"]["code"] in allowed_errors.get(
+            response.status_code, set()
+        )
         and isinstance(body["error"].get("message"), str)
     ):
         return jsonify(body), response.status_code
@@ -260,12 +272,24 @@ def purchase(item_id):
 
                 order_id = cursor.lastrowid
 
-    except sqlite3.OperationalError:
+    except sqlite3.OperationalError as error:
         app.logger.exception("Database operation failed.")
+        sqlite_code = getattr(error, "sqlite_errorcode", None)
+        primary_code = (
+            sqlite_code & 0xFF if sqlite_code is not None else None
+        )
+
+        if primary_code in (sqlite3.SQLITE_BUSY, sqlite3.SQLITE_LOCKED):
+            return error_response(
+                "SERVICE_UNAVAILABLE",
+                "Order database is temporarily unavailable.",
+                503
+            )
+
         return error_response(
-            "SERVICE_UNAVAILABLE",
-            "Order database is temporarily unavailable.",
-            503
+            "INTERNAL_ERROR",
+            "Could not save the order.",
+            500
         )
 
     except sqlite3.DatabaseError:
